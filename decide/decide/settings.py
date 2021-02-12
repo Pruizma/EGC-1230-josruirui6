@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Especifica aqui tu UVUS
-UVUS = 'UVUS-to-Change'
+UVUS = 'josruirui6'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -163,11 +163,12 @@ STATIC_URL = '/static/'
 
 # number of bits for the key, all auths should use the same number of bits
 KEYBITS = 256
+APIS = {}
 
 # Versioning
 ALLOWED_VERSIONS = ['v1', 'v2']
 DEFAULT_VERSION = 'v1'
-
+BASEURL = 'https://egc1230-josruirui6.herokuapp.com'
 try:
     from local_settings import *
 except ImportError:
@@ -183,3 +184,6 @@ if os.path.exists("config.jsonnet"):
 
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
+
+import django_heroku
+django_heroku.settings(locals())
